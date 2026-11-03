@@ -150,6 +150,7 @@ a {
 /* HERO MOCKUP */
 
 .hero-visual {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -161,6 +162,39 @@ a {
     object-fit: cover;
     border-radius: 50%;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+.hero-greeting {
+    position: absolute;
+    top: 8%;
+    right: 8%;
+    padding: 10px 18px;
+    border-radius: 18px 18px 4px 18px;
+    background: #171717;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    opacity: 0;
+    animation: greeting-pop 600ms ease-out 500ms forwards;
+}
+
+@keyframes greeting-pop {
+    from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-greeting {
+        opacity: 1;
+        animation: none;
+    }
 }
 
 .email-btn {
